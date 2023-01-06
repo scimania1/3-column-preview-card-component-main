@@ -1,0 +1,143 @@
+:root {
+  --clr-primary-orange: hsl(31, 77%, 52%);
+  --clr-primary-dCyan: hsl(184, 100%, 22%);
+  --clr-primary-vdCyan: hsl(179, 100%, 13%);
+
+  --clr-neutral-white: hsla(0, 0%, 100%, 0.75);
+  --clr-neutral-vlGray: hsl(0, 0%, 95%);
+
+  --ff-base: 'Lexend Deca', sans-serif;
+  --ff-heading: 'Big Shoulders Display', cursive;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+svg,
+video,
+caption {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: var(--ff-base);
+  background-color: var(--clr-neutral-vlGray);
+  font-size: 0.9375rem;
+}
+
+.cars {
+  display: grid;
+  place-items: center;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.car {
+  display: grid;
+  gap: 1.5rem;
+  padding: 3.2rem;
+  width: 100%;
+}
+
+.sedans {
+  background-color: var(--clr-primary-orange);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.suvs {
+  background-color: var(--clr-primary-dCyan);
+}
+
+.luxury {
+  background-color: var(--clr-primary-vdCyan);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.car__name {
+  font-family: var(--ff-heading);
+  color: var(--clr-neutral-vlGray);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+.car__description {
+  color: var(--clr-neutral-white);
+  line-height: 25px;
+}
+
+.button {
+  width: fit-content;
+  padding: 1rem 2rem;
+  border-width: 0;
+  border-radius: 1.5rem;
+  background-color: var(--clr-neutral-vlGray);
+  cursor: pointer;
+}
+
+.button:is(:hover, :focus) {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--clr-neutral-vlGray);
+  border: 1px solid var(--clr-neutral-vlGray);
+}
+
+.sedans > button {
+  color: var(--clr-primary-orange);
+}
+
+.suvs > button {
+  color: var(--clr-primary-dCyan);
+}
+
+.luxury > button {
+  color: var(--clr-primary-vdCyan);
+}
+
+@media screen and (min-width: 800px) {
+  .cars {
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  }
+
+  .sedans {
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: 0;
+  }
+
+  .luxury {
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0;
+  }
+
+  .car {
+    height: 100%;
+    padding: 3.5rem;
+  }
+}
